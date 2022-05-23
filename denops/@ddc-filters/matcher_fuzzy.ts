@@ -17,12 +17,12 @@ export class Filter extends BaseFilter<Params> {
       if (args.filterParams.splitMode === "word") {
         return fuzzy.wtest(
           normalize(args.completeStr),
-          normalize(candidate.word),
+          normalize(candidate.abbr || candidate.word),
         );
       } else {
         return fuzzy.ctest(
           normalize(args.completeStr),
-          normalize(candidate.word),
+          normalize(candidate.abbr || candidate.word),
         );
       }
     }));

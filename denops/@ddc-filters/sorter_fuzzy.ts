@@ -16,7 +16,7 @@ export class Filter extends BaseFilter<Params> {
         candidate,
         fuzzy.findBestMatch(
           normalize(args.completeStr),
-          normalize(candidate.word),
+          normalize(candidate.abbr || candidate.word),
         ),
       ]),
     );

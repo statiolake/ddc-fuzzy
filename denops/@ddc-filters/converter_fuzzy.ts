@@ -19,7 +19,7 @@ export class Filter extends BaseFilter<Params> {
       args.candidates.map((candidate) => {
         const match = fuzzy.findBestMatch(
           normalize(args.completeStr),
-          normalize(candidate.word),
+          normalize(candidate.abbr || candidate.word),
         )
         return {
           ...candidate,
